@@ -1,0 +1,91 @@
+\documentclass{csulbMasterThesis}
+
+\usepackage{lipsum}
+
+
+\graphicspath{{Assets/}}
+
+
+
+\def\arraystretch{1.2}
+
+% Colors
+\definecolor{darkColor}{RGB}{100,90,75}		% umber
+\definecolor{lightColor}{RGB}{243,238,233}	% sand
+
+\title{THE TITLE OF YOUR MANUSCRIPT:\\INVERTED PYRAMID FORMAT\\AND UPPERCASE}
+\dept{the Department of Astrophysics}
+\degree{Master of Science in Astrophysics}
+\committee{Galileo Galilei, Ph.D. (Chair)\\Nicolaus Copernicus Ph.D.\\Sir Isaac Newton Ph.D.\\Christiaan Huygens Ph.D.}
+\designee{Kimmothy Kardashian Ph.A.}
+\author{Giovanni Cassini}
+\undergrad{B.S., 1645, University of Bologna} 
+\date{May 1647}
+
+% \author{ {\small prepared by} \\ Arya Daroui}
+
+
+
+
+\begin{document}
+	\titlepage
+	% \tableofcontents
+
+	\section*{Abstract}
+		\lipsum[1][1-10]
+	\section{Introduction}
+		\lipsum[2][1-10]
+		\begin{tableLight}{light}{|c|c|c|}
+			\textbf{Did} & \textbf{you}  & \textbf{ever} \\
+			\hline
+			hear & the & tragedy \\
+			of & Darth & Plageueis \\
+			The & Wise? & bottom text\\
+		\end{tableLight}
+		\lipsum[7][1-10]
+		% \plot{Running away from my problems over time}{plot.pdf}
+		\lipsum[4][1-10]
+		\lipsum[6][1-10]
+
+	\section{Something important}
+		\lipsum[3][1-10]\footnote{I am the $\alpha$ and the $\omega$}
+		\begin{equation}
+			F(\mathrm{i} \omega) = \int_{-\infty}^\infty f(t) \mathrm{e}^{\mathrm{i} \omega t} \, \mathrm{d}t
+		\end{equation}
+		\lipsum[3][10-14]
+		% \fig{EE.pdf}{Electrical engineering at The Beach}
+		\lipsum[3][15-16]
+
+
+		\subsection{Another definitely important thing}
+			\lipsum[5][1-10]
+			
+			\begin{dent}
+				\lipsum[2][1-10]
+				$$
+					\delta = 10 \text{ m}
+				$$
+			\end{dent}
+
+% need to configure gobble argument
+
+			
+			\subsubsection{Probably the most important thing}
+				\lipsum[8][1-10]
+				\begin{code}
+def foo():
+	bar = "what a beautiful document"
+	print(bar)
+				\end{code}	
+				\lipsum[9][1-10]
+				\begin{tableDark}{dark}{|c|c|c|}
+					\color{white}\textbf{One} & \color{white}\textbf{Two}  & \color{white}\textbf{Three} \\
+					Hello & there. & General \\
+					Kenobi! & You & are \\
+					a & bold & one. \\
+				\end{tableDark}
+
+	\section{Conclusion}
+		\lipsum[7][1-10]
+
+\end{document}
