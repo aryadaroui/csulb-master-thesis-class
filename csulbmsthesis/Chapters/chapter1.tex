@@ -6,11 +6,11 @@ In these paragraphs, we will display examples for many common features in \LaTeX
 
 \section*{Fonts and Styles}
 
-\textbf{Bold} font is made using the \texttt{\textbackslash textbf} command. \textit{Italic} font is made using the \texttt{\textbackslash textit} command. \underline{Underline} font is made using the \texttt{\textbackslash underline} command. \texttt{Monospace/teletype} font is made using the \texttt{\textbackslash texttt} command. \textsf{Sans-serif} font is made using the \texttt{\textbackslash textsf} command. \textsc{Small capitals} font is made using the \texttt{\textbackslash textsc} command.
+\textbf{Bold} font is made using the \texttt{\textbackslash textbf} command. \textit{Italic} font is made using the \texttt{\textbackslash textit} command. \underline{Underline} font is made using the \texttt{\textbackslash underline} command. \texttt{Monospace/teletype} font is made using the \texttt{\textbackslash texttt} command. \textsf{Sans-serif} font is made using the \texttt{\textbackslash textsf} command.
 
 \section*{Math}
 
-One of \LaTeX's greatest strengths is its mathemetical typesetting. You can enter inline math $e^{\mathrm{i}\pi}$. You can also have a math block.
+One of \LaTeX's greatest strengths is its mathemetical typesetting. You can enter inline math $\mathrm{e}^{\mathrm{i}\pi}$. You can also have a math block.
 
 $$
 f(x) = \int _{-\infty} ^\infty g(x) \, \mathrm{d}x
@@ -19,7 +19,7 @@ $$
 You can have numbered equations with the \texttt{equation} environment.
 
 \begin{equation}
-	\Phi(n) = \gamma^n + \Delta \gamma \cdot \vec{\zeta}
+	\Phi(n) = \gamma^n + \Delta \gamma \cdot \vec{\zeta} \label{eqn:exampleEqn}
 \end{equation}
 
 You can also align equations by using a \texttt{\&} in the \texttt{align*} environment. Omitting the \texttt{*} will number each line.
@@ -31,7 +31,7 @@ You can also align equations by using a \texttt{\&} in the \texttt{align*} envir
 	h_n &= \mathbf{X}_n + N \\
 \end{align*}
 
-A common mistake is to italcize units in math mode. Units are supposed to be typset in a roman font because $\mu m$ in italic means you are multiplying two variables and $\mathrm{\upmu m}$ means your value is in micrometers. A similar mistake is often made for special functions. If you are using a multi-letter function such as $\sin()$ or $\mathrm{floor}()$, it should not be italic for the same reason as before. To fix these issues, you can use the \texttt{\textbackslash mathrm} command when in math mode to set your text as roman (or upright). Greek letters need to be specified as upright by prepending `up' to the command, e.g., \texttt{\$\textbackslash upmu\$}.
+Make sure you use the proper notation for your field. A common mistake is to italicize units in math mode. Units are supposed to be typset in a roman font because $\mu m$ in italic means you are multiplying two variables and $\mathrm{\upmu m}$ means your value is in micrometers. A similar mistake is often made for special functions. If you are using a multi-letter function such as $\sin()$ or $\mathrm{floor}()$, it should not be italic for the same reason as before. To fix these issues, you can use the \texttt{\textbackslash mathrm} command when in math mode to set your text as roman (or upright). Greek letters need to be specified as upright by prepending `up' to the command, e.g., \texttt{\$\textbackslash upmu\$}.
 
 \section*{Quotation marks}
 Quotes are written in latex using \texttt{\`} for opening and \texttt{\'} for closing. They can be used for `single' and ``double'' quotes alike.
@@ -62,11 +62,11 @@ class Fill:
 \end{verbatim}
 
 \section*{Figures}
-Figures can be included using the \texttt{\textbackslash includegraphics} command, and their placement and captioning can be configured using the \texttt{figure} environment. Generally, \LaTeX can determine the best placement of your figure on the page itself, but you can give it a placement option of \texttt{h}, \texttt{t}, \texttt{b}, or \texttt{p} to place it \underline{h}ere, on \underline{t}op, on \underline{b}ottom, or on its own \underline{p}age. 
+Figures can be included using the \texttt{\textbackslash includegraphics} command, and their placement and captioning can be configured using the \texttt{figure} environment. Generally, \LaTeX can determine the best placement of your figure on the page itself, but you can give it a placement option of \texttt{h}, \texttt{t}, \texttt{b}, or \texttt{p} to place it \underline{h}ere, on \underline{t}op, on \underline{b}ottom, or on its own \underline{p}age. Note that in \texttt{main.tex}, we have already set the graphics path with the \texttt{\textbackslash graphicspath\{ \{Figures/ \} \}} command, which means it is always going to look in that folder for your figures.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
-	\includegraphics[width=2in]{Figures/lb.pdf}
+	\includegraphics[width=2in]{lb.pdf}
 	\caption{The CSULB logo partially superimposed over a sine wave. This extra text is a test of the caption behavior when there is a longer caption. Lorem ipsum dolor.}
 	\label{fig:exampleFig}
 \end{figure}
@@ -74,9 +74,9 @@ Figures can be included using the \texttt{\textbackslash includegraphics} comman
 The graphics path is already set
 
 \section*{Tables}
-Tables can be generated using the \texttt{tabular} environment, and their placement and captioning is configured with the \texttt{table} environment, like with figures.
+Tables can be generated using the \texttt{tabular} environment, and their placement and captioning is configured with the \texttt{table} environment, like with figures. In the \texttt{tabular} environment, you provide a section parameter that configures your number ofcolumns, their text alignment, and vertical borders.
 
-\begin{table}
+\begin{table}[h!]
 	\centering
 	\caption{An example of a table}
 	\begin{tabular}{l c c}
@@ -93,11 +93,10 @@ Tables can be generated using the \texttt{tabular} environment, and their placem
 \end{table}
 
 \section*{Citations and Cross-references}
-Many items can be cross-referenced in \LaTeX using labels.\cite{customBibLabel}
+You can add citations from your \texttt{references.bib} file using the \texttt{\textbackslash cite} command \cite{customBibLabel}. You can also cross-reference equations, figures, and tables and many other items by giving them a custom label with the \texttt{\textbackslash label} command, and using the  \texttt{\textbackslash ref} command to call them. Citations and references like this are very nice because you don't have to worry about item numbering and how it may change as you develop your document; you tell \LaTeX where you want it, and it will handle the numbering so it makes sense. And in PDF viewers, the cross-references are clickable intra-document links that will take you to the associated item. Figure \ref{fig:exampleFig}. Table \ref{tab:exampleTable}. Equation \ref{eqn:exampleEqn}.
 
 \section*{Footnotes}
-Footnotes can be placed with the \texttt{\textbackslash footnote} command
-\footnote{This is a footnote but it's a very long footnote so that we can test the indent of the footnote text when it leads onto a second line at the bottom of the page.}. 
+Footnotes can be placed with the \texttt{\textbackslash footnote} command\footnote{This is a footnote but it's a very long footnote so that we can test the indent of the footnote text when it leads onto a second line at the bottom of the page.}. 
 
 \section*{Headings}
 This document class supports up to third level subheadings or \emph{subsubsections}. Fourth level headings are not currently supported.

@@ -54,7 +54,7 @@ Omitting the formatting, the output will look like
 > Now I will have a block of math:
 >
 > $$
-> E = mc^2
+> E = mc^2 % this won't be shown correctly on github
 > $$
 
 ## Common commands and macros
