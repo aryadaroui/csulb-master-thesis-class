@@ -64,19 +64,17 @@ class Fill:
 \section*{Figures}
 Figures can be included using the \texttt{\textbackslash includegraphics} command, and their placement and captioning can be configured using the \texttt{figure} environment. Generally, \LaTeX can determine the best placement of your figure on the page itself, but you can give it a placement option of \texttt{h}, \texttt{t}, \texttt{b}, or \texttt{p} to place it \underline{h}ere, on \underline{t}op, on \underline{b}ottom, or on its own \underline{p}age. Note that in \texttt{main.tex}, we have already set the graphics path with the \texttt{\textbackslash graphicspath\{ \{Figures/ \} \}} command, which means it is always going to look in that folder for your figures.
 
-\begin{figure}[h!]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=2in]{lb.pdf}
 	\caption{The CSULB logo partially superimposed over a sine wave. This extra text is a test of the caption behavior when there is a longer caption. Lorem ipsum dolor.}
 	\label{fig:exampleFig}
 \end{figure}
 
-The graphics path is already set
-
 \section*{Tables}
 Tables can be generated using the \texttt{tabular} environment, and their placement and captioning is configured with the \texttt{table} environment, like with figures. In the \texttt{tabular} environment, you provide a section parameter that configures your number ofcolumns, their text alignment, and vertical borders.
 
-\begin{table}[h!]
+\begin{table}[ht]
 	\centering
 	\caption{An example of a table}
 	\begin{tabular}{l c c}
@@ -93,10 +91,7 @@ Tables can be generated using the \texttt{tabular} environment, and their placem
 \end{table}
 
 \section*{Citations and Cross-references}
-You can add citations from your \texttt{references.bib} file using the \texttt{\textbackslash cite} command \cite{customBibLabel}. You can also cross-reference equations, figures, and tables and many other items by giving them a custom label with the \texttt{\textbackslash label} command, and using the  \texttt{\textbackslash ref} command to call them. Citations and references like this are very nice because you don't have to worry about item numbering and how it may change as you develop your document; you tell \LaTeX where you want it, and it will handle the numbering so it makes sense. And in PDF viewers, the cross-references are clickable intra-document links that will take you to the associated item. Figure \ref{fig:exampleFig}. Table \ref{tab:exampleTable}. Equation \ref{eqn:exampleEqn}.
+You can add citations \cite{customBibLabel} from \cite{Q} your \texttt{references.bib} file \cite{Burka:1993a} using the \texttt{\textbackslash cite} command \cite{customBibLabel2}. You can also cross-reference equations, figures, and tables and many other items by giving them a custom label with the \texttt{\textbackslash label} command, and using the  \texttt{\textbackslash ref} command to call them. Citations and references like this are very nice because you don't have to worry about item numbering and how it may change as you develop your document; you tell \LaTeX where you want it, and it will handle the numbering so it makes sense. And in PDF viewers, the cross-references are clickable intra-document links that will take you to the associated item. Figure \ref{fig:exampleFig}. Table \ref{tab:exampleTable}. Equation \ref{eqn:exampleEqn}.
 
 \section*{Footnotes}
 Footnotes can be placed with the \texttt{\textbackslash footnote} command\footnote{This is a footnote but it's a very long footnote so that we can test the indent of the footnote text when it leads onto a second line at the bottom of the page.}. 
-
-\section*{Headings}
-This document class supports up to third level subheadings or \emph{subsubsections}. Fourth level headings are not currently supported.

@@ -171,7 +171,6 @@ John & 123 & Blue \\
 >\end{array}
 >$$
 >
->
 
 The `{ l | c r}` shows that you have three columns, the left with `l`eft aligned text, the center with `c`entered text, and the right with `r`ight aligned text. The `|` places a vertical line between the columns. The `&` delimits each cell in a row,  the `\\` shows where the row ends, and the `\hline` adds a horizontal line between rows.. 
 
