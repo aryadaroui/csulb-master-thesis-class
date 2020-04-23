@@ -4,13 +4,13 @@
 
 \usepackage{lipsum} % used for dummy text in preface.tex and chapter2.tex. you should remove this and the accompanying \lipsum commands
 
-% %%% Use for Turabian style bibliography and references. Use \printbibliography and remove the \bibliography{} and \bibliographystyle{} commands
+%%% Use for Turabian style bibliography and references. Use \printbibliography and remove the \bibliography{} and \bibliographystyle{} commands
 % \usepackage[backend=bibtex]{biblatex-chicago}
 % \addbibresource{references.bib}
 % \renewcommand{\bibsetup}{\singlespacing}
 % \renewcommand{\bibitemsep}{1\baselineskip}
 % \renewcommand{\bibhang}{0.5in}
-% %%%
+%%%
 
 % \usepackage{natbib} % use this if using 'ascelike' for bibliography. 
 
@@ -54,8 +54,11 @@
 %% ----------------------- %%
 
 \bibTitlePage{REFERENCES} % Adds and chooses the title page and heading at the top of your bibliography/references page
+
 \bibliographystyle{ieeetr} % popular options include 'ieeetr' 'asmejour' 'ascelike'
 \bibliography{references}
-% \printbibliography % Use this if you're using the biblatex chicago/turabian style, and comment out the above \bibliography{} and \bibliographystyle{} commands
+
+% {\centering \textbf{REFERENCES}} % Use this if you're using the biblatex chicago/turabian style 
+% \printbibliography[heading=none] % Use this if you're using the biblatex chicago/turabian style, and comment out the above \bibliography{} and \bibliographystyle{} commands
 
 \end{document}

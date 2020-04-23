@@ -1,6 +1,6 @@
 # Intro to LaTeX
 
-LaTeX is a professional document typesetting system that makes beautiful, organized documents. In LaTeX, you  program the fine details of the document. This is nice because the output is easier to organize and fine details are more customizable in code than in word processors. Additionally, once you have a formatting template you like, you can focus solely on your writing, because the programmatic nature of LaTeX will reproduce your format for you.
+LaTeX is a professional document typesetting system that makes beautiful, professional documents. What makes it special is that you program the content and format of the document in code. This is nice because the output is easier to organize and fine details are more customizable in code than in word processors. 
 
 ## Setup
 
@@ -24,11 +24,13 @@ Hello world. This is a beautiful document.
 
 LaTeX takes commands (or macros) in the form of `\someCommand`, and you can input arguments to those commands with `{}` and sometimes `[]`. Shown above are the `\begin{}` and `\end{}` commands. These are used for a variety of things, but here, we use them to delimit the boundaries of your document.
 
-The area before you begin your document is called the *preamble*. This is where you declare additional formatting behavior for your document. As shown above, every LaTeX document must declare what class of document it is to determine basic styling. We chose report, but some other common options include: `book`, `letter`, `report`.  If you wish to do something more sophisticated, such as changing the font, you can use `\usepackage{}`, as shown in the code block below. There are many different packages included with LaTeX distributions, and the documentation for their usage is most easily found on [CTAN](https://ctan.org).
+The area before you begin your document is called the **preamble**. This is where you declare additional formatting behavior for your document. As shown above, in the preamble, every LaTeX document must declare what class of document it is to determine basic styling. We chose report, but some other common options include: `book` or `letter`. 
+
+If you wish to do something more sophisticated than what is in vanilla LaTeX, you can load additional **packages** to change formatting. You do this with the `\usepackage{}` command, as shown in the code block below. There are many different packages included with LaTeX distributions, and the documentation for their usage is most easily found on [CTAN](https://ctan.org).
 
 Note that TeX uses `%` for comments, so anything coming after (and including) a `%` on a line will be ignored during compilation. This is useful for writing notes to yourself. If you wish your `%` symbol to be compiled, you can use the command `\%`. 
 
-Similarly, LaTeX uses pairs of `$` and `$$` to mark *math mode*. A  `$` marks inline math, and `$$` marks a math block.
+Similarly, LaTeX uses pairs of `$` and `$$` to mark **math mode**. A  `$` marks inline math, and `$$` marks a math block.
 
 ```latex
 \documentclass{article}
@@ -37,7 +39,7 @@ Similarly, LaTeX uses pairs of `$` and `$$` to mark *math mode*. A  `$` marks in
 \usepackage{newtxtext, newtxmath} % sets the text and math fonts to times new roman
 
 \begin{document}
-Look, I am using math inline: $\alpha = 5$
+Look, I am using math inline: $\beta = 5$
 
 Now I will have a block of math:
 
@@ -49,7 +51,7 @@ $$
 
 Omitting the formatting, the output will look like
 
-> Look, I am using math inline: $\alpha = 5$
+> Look, I am using math inline: $\beta = 5$
 >
 > Now I will have a block of math:
 >
@@ -59,7 +61,7 @@ Omitting the formatting, the output will look like
 
 ## Common commands and macros
 
-There are many structures often used in documents
+Vanilla LaTeX accommodates all the standard structures in typesetting normal documents. How to apply them is shown below.
 
 ### Headings
 
@@ -80,6 +82,14 @@ Depending upon your selected document class, you may have a slightly different h
 \emph{italicized text}
 \underline{underlined text}
 ```
+
+> $$
+> \textbf{bold text} \\
+> \textit{italicized text} \\
+> \underline{\text{underlined}}
+> $$
+>
+> 
 
 ### Lists
 
@@ -107,7 +117,7 @@ Depending upon your selected document class, you may have a slightly different h
 
 ### Figures
 
-You have to use the `graphicx` package. Your included images should be in the same folder as the file you're compiling from. If you wish to put them in a different folder, you can select the path to the folder.
+To embed figures, you have to use the `graphicx` package. Your included images should be in the same folder as the file your compiling from, or, if you wish to put them in a different folder, you can select the path to the folder.
 
 ```latex
 \documentclass{article}
@@ -121,7 +131,7 @@ Shown below is a picture of a cat.
 \end{document}
 ```
 
-The above simply inserts an image into your document. Below shows a captioned figure that is expanded to be as large as the text width.
+The above simply inserts an image into your document. Below shows a captioned figure that is expanded to be as large as the text block.
 
 ```latex
 \documentclass{article}
@@ -133,7 +143,7 @@ Shown below is a picture of a cat.
 
 \begin{figure}[h] % `h` declares that you want your picture approximately where you inserted it
 \centering % centers the image within this figure
-\includegraphics[width=\textwidth]{cat.png} % width= determines the size of your image
+\includegraphics[width=\textwidth]{cat.png} % width= determines the size of your image. you could also put width=2in or other measurements
 \caption{A tabby cat}
 % \label{fig:cat} % this isn't necessary, but can be helpful if you wish to reference this figure later
 \end{figure}
@@ -141,7 +151,7 @@ Shown below is a picture of a cat.
 \end{document}
 ```
 
-The `h` parameter tells the compiler you want your picture roughly where you inserted it. This is important because sometimes figures can be positioned awkwardly on a page, so the compiler will choose a good place for us. If you wish to put it exactly where you inserted it, you can use `H` instead. Alternatively, you can use `t` or `b` for top or bottom, respectively.
+The `h` parameter tells the compiler you want your picture roughly where you inserted it. This is important because sometimes figures can be positioned awkwardly on a page, so the compiler will choose a good place for us. If you wish to put it exactly where you inserted it, you can use `H` instead. Alternatively, you can use `t` or `b` for top or bottom, respectively. This can be a little finicky if you have a lot of images you are trying to place on one page.
 
 ### Tables
 
@@ -174,8 +184,6 @@ John & 123 & Blue \\
 
 The `{ l | c r}` shows that you have three columns, the left with `l`eft aligned text, the center with `c`entered text, and the right with `r`ight aligned text. The `|` places a vertical line between the columns. The `&` delimits each cell in a row,  the `\\` shows where the row ends, and the `\hline` adds a horizontal line between rows.. 
 
-A more comprehensive review is provided by [Overleaf](https://www.overleaf.com/learn/latex/Tables)
-
 ### Bibliography and citations
 
 Bibliographies are one of TeX's strongest points. LaTeX links to a file where you save the known information for your bibliography. You can adjust the formatting of the bibliography the fly using the `\bibliographystyle{}` command. 
@@ -198,7 +206,7 @@ In the code block above, we set the bibliography style to IEEE, and link to a `r
 }
 ```
 
-To edit your `.bib` file, you can use a bibliography manager such as BibDesk, or you can edit it by hand.
+To edit your `.bib` file, you can use a bibliography manager such as BibDesk (recommended), or you can edit it by hand.
 
 In the body of your document, you can cite certain entries in your bibliography with the `\cite{label entry}` command. It will automatically make the citation in the selected style. An example is shown below.
 
@@ -214,3 +222,14 @@ Notice that you can name the first field, the label, in the `.bib` file whatever
 
 Footnotes can be placed with the following command `\footnote{content of footnote}`. It will automatically be numbered and placed in the footer.
 
+### And more
+
+A more comprehensive review is provided by [Overleaf](https://www.overleaf.com/learn/latex/Tables).
+
+## File types
+
+- `.tex` files contain your LaTeX code you can compile from.
+- `.bib` files contain your bibliography data.
+- `.cls` or *class* files contain LaTeX code for a document class (book, report, article, etc.) formatting that you can easily load in. Inside these files is mostly code that you would find in the preamble, but we place it in their own separate files so that they are portable and can be used as templates.
+
+- `.bst` files contain formatting code for bibliography notation styles. E.g. IEEE vs APA vs MLA.
