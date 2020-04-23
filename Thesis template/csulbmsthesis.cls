@@ -1,6 +1,6 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % CSULB MS Thesis Class											%
-% v0.9 - March 2020												%
+% v1.0 - April 2020												%
 %																%
 % Written by Arya Daroui:  daroui.arya@gmail.com				%
 % This work is under the MIT License							%
@@ -8,7 +8,7 @@
 
 % --- Class setup --- %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{csulbmsthesis}[2020/03/12 v0.9]
+\ProvidesClass{csulbmsthesis}[2020/04/23 v1.0]
 \AtEndOfClass{\RequirePackage{microtype}}
 \ProcessOptions*
 \LoadClass[12pt, oneside]{book}
